@@ -7,6 +7,7 @@ import AppHeader from "./components/AppHeader";
 import { Fragment } from "react/jsx-runtime";
 import PageSEO from "./seo/PageSEO";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => (
   <ThemeProvider>
@@ -34,6 +35,7 @@ const App = () => (
       </Router>
       <Footer />
     </div>
+    <Analytics />
   </ThemeProvider>
 );
 
