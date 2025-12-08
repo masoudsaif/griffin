@@ -1,5 +1,6 @@
 import { memo, type FC } from "react";
 import useTheme from "../hooks/useTheme";
+import { EFFECTIVE_DATE, EMAIL, STUDIO_NAME } from "../constants";
 
 const TermsAndConditionsPage: FC = memo(() => {
   const theme = useTheme();
@@ -26,14 +27,14 @@ const TermsAndConditionsPage: FC = memo(() => {
       </h1>
 
       <p style={{ fontSize: theme.scale(14) }}>
-        Effective Date: [Month Day, Year]
+        Effective Date: {EFFECTIVE_DATE}
       </p>
 
       <p style={{ fontSize: theme.scale(14) }}>
         Welcome to <strong>Void Voyagers</strong>, a mobile game developed and
-        published by [Your Name or Studio Name] (“we,” “our,” or “us”). By
-        downloading, installing, or playing the game, you agree to the following
-        Terms and Conditions. Please read them carefully.
+        published by {STUDIO_NAME}. By downloading, installing, or playing the
+        game, you agree to the following Terms and Conditions. Please read them
+        carefully.
       </p>
 
       <h2
@@ -78,9 +79,9 @@ const TermsAndConditionsPage: FC = memo(() => {
         3. Intellectual Property
       </h2>
       <p style={{ fontSize: theme.scale(14) }}>
-        All artwork, code, sounds, music, and other creative assets in{" "}
-        <strong>Void Voyagers</strong> are owned by [Your Name or Studio Name]
-        and are protected by applicable copyright and trademark laws.
+        All artwork, code, and other creative assets except music and sound in{" "}
+        <strong>Void Voyagers</strong> are owned by {STUDIO_NAME} and are
+        protected by applicable copyright and trademark laws.
       </p>
 
       <h2
@@ -123,10 +124,10 @@ const TermsAndConditionsPage: FC = memo(() => {
         6. Limitation of Liability
       </h2>
       <p style={{ fontSize: theme.scale(14) }}>
-        To the maximum extent permitted by law, [Your Name or Studio Name] shall
-        not be liable for any damages arising from your use of the game,
-        including but not limited to loss of data, device malfunction, or other
-        indirect damages.
+        To the maximum extent permitted by law, {STUDIO_NAME} shall not be
+        liable for any damages arising from your use of the game, including but
+        not limited to loss of data, device malfunction, or other indirect
+        damages.
       </p>
 
       <h2
@@ -153,7 +154,7 @@ const TermsAndConditionsPage: FC = memo(() => {
         8. Governing Law
       </h2>
       <p style={{ fontSize: theme.scale(14) }}>
-        These Terms are governed by the laws of [Your Country or State], without
+        These Terms are governed by the laws of Texas, United States, without
         regard to conflict-of-law principles.
       </p>
 
@@ -168,7 +169,10 @@ const TermsAndConditionsPage: FC = memo(() => {
       </h2>
       <p style={{ fontSize: theme.scale(14) }}>
         If you have any questions about these Terms, please contact us at{" "}
-        <strong>[your email address]</strong>.
+        <a href={`mailto:${EMAIL}`} style={{ color: theme.colors.primary }}>
+          {EMAIL}
+        </a>
+        .
       </p>
     </div>
   );

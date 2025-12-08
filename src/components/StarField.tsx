@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef } from "react";
-import Star from "../assets/Star.png";
+import Star from "../assets/star.png";
 
 const Starfield = memo(() => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

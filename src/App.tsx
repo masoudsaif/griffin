@@ -5,6 +5,8 @@ import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import AppHeader from "./components/AppHeader";
 import { Fragment } from "react/jsx-runtime";
+import PageSEO from "./seo/PageSEO";
+import Footer from "./components/Footer";
 
 const App = () => (
   <ThemeProvider>
@@ -19,6 +21,7 @@ const App = () => (
     >
       <Starfield />
       <Router>
+        <PageSEO />
         <AppHeader />
         <Routes>
           <Route path="/" element={<Fragment />} />
@@ -29,6 +32,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
       </Router>
+      <Footer />
     </div>
   </ThemeProvider>
 );

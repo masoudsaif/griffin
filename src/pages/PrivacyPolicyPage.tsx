@@ -1,5 +1,6 @@
 import { memo, type FC } from "react";
 import useTheme from "../hooks/useTheme";
+import { EFFECTIVE_DATE, EMAIL } from "../constants";
 
 const PrivacyPolicyPage: FC = memo(() => {
   const theme = useTheme();
@@ -26,7 +27,7 @@ const PrivacyPolicyPage: FC = memo(() => {
       </h1>
 
       <p style={{ fontSize: theme.scale(14) }}>
-        Effective Date: [Month Day, Year]
+        Effective Date: {EFFECTIVE_DATE}
       </p>
 
       <p style={{ fontSize: theme.scale(14) }}>
@@ -162,7 +163,11 @@ const PrivacyPolicyPage: FC = memo(() => {
       </h2>
       <p style={{ fontSize: theme.scale(14) }}>
         If you have questions or concerns about this Privacy Policy, please
-        contact us at <strong>[your email address]</strong>.
+        contact us at{" "}
+        <a href={`mailto:${EMAIL}`} style={{ color: theme.colors.primary }}>
+          {EMAIL}
+        </a>
+        .
       </p>
     </div>
   );
