@@ -1,5 +1,6 @@
 export const RouteName = {
   Home: "Home",
+  Support: "Support",
   TermsAndConditions: "TermsAndConditions",
   PrivacyPolicy: "PrivacyPolicy",
   NotFound: "NotFound",
@@ -9,6 +10,7 @@ export type RouteNameType = (typeof RouteName)[keyof typeof RouteName];
 
 export const RoutePath: Record<RouteNameType, string> = {
   [RouteName.Home]: "/",
+  [RouteName.Support]: "/support",
   [RouteName.TermsAndConditions]: "/terms-and-conditions",
   [RouteName.PrivacyPolicy]: "/privacy-policy",
   [RouteName.NotFound]: "*",
@@ -24,6 +26,13 @@ export const RouteMeta: Record<
       "Void Voyagers is an intense iOS space survival game where you pilot a modular spaceship, dodge asteroid storms, defeat enemies, and unlock powerful upgrades. Built by Masoud Studios.",
     keywords:
       "Void Voyagers, space game, iOS space game, asteroid survival game, spaceship game, space shooter, modular spaceship, Masoud Studios, sci-fi game, cosmic action game",
+  },
+  [RouteName.Support]: {
+    title: "Support — Void Voyagers Help Center",
+    description:
+      "Need assistance with your mission? Visit the Void Voyagers support page for troubleshooting, gameplay tips, and contact information for Masoud Studios.",
+    keywords:
+      "Void Voyagers support, game help, troubleshoot space game, contact Masoud Studios, game feedback, bug report",
   },
   [RouteName.TermsAndConditions]: {
     title: "Terms and Conditions — Void Voyagers",

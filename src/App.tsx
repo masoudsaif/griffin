@@ -1,13 +1,19 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Starfield from "./components/StarField";
 import ThemeProvider from "./providers/ThemeProvider";
 import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import AppHeader from "./components/AppHeader";
-import { Fragment } from "react/jsx-runtime";
 import PageSEO from "./seo/PageSEO";
 import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { RoutePath } from "./constants/routes";
+import SupportPage from "./pages/SupportPage";
 
 const App = () => (
   <ThemeProvider>
@@ -25,12 +31,20 @@ const App = () => (
         <PageSEO />
         <AppHeader />
         <Routes>
-          <Route path="/" element={<Fragment />} />
           <Route
-            path="/terms-and-conditions"
+            path={RoutePath.Home}
+            element={<Navigate to={RoutePath.Support} />}
+          />
+          <Route path={RoutePath.Support} element={<SupportPage />} />
+
+          <Route
+            path={RoutePath.TermsAndConditions}
             element={<TermsAndConditionsPage />}
           />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route
+            path={RoutePath.PrivacyPolicy}
+            element={<PrivacyPolicyPage />}
+          />
         </Routes>
       </Router>
       <Footer />
